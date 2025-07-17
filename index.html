@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ultimate Quiz App</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="toggle-mode">
+      <label>Dark Mode:</label>
+      <label class="switch">
+        <input type="checkbox" id="themeToggle" />
+        <span class="slider"></span>
+      </label>
+    </div>
+
+    <div id="start-screen">
+      <h2>Choose a Category</h2>
+      <button onclick="startQuiz('programming')">Programming</button>
+      <button onclick="startQuiz('web')">Web</button>
+      <button onclick="startQuiz('general')">General</button>
+    </div>
+
+    <div id="quiz-screen" class="hidden">
+      <div class="controls">
+        <div class="control-group">
+          <div class="timer-container">
+            <span class="timer-icon">⏱️</span>
+            <span id="timer">30</span>s
+          </div>
+        </div>
+        <div class="control-group">
+          <span id="question-count">1/5</span>
+        </div>
+      </div>
+      <h2 id="question">Question</h2>
+      <div id="options" class="options"></div>
+      <button id="nextBtn" class="main-btn">Next</button>
+    </div>
+
+    <div id="result-screen" class="hidden">
+      <h2>Quiz Completed!</h2>
+      <p id="score-text"></p>
+      <img id="badge" class="badge" src="assets/images/" alt="Badge" />
+      <button onclick="location.reload()">Try Again</button>
+    </div>
+  </div>
+
+  <audio id="click-sound" src="assets/sounds/click.mp3"></audio>
+  <audio id="correct-sound" src="assets/sounds/correct.mp3"></audio>
+  <audio id="wrong-sound" src="assets/sounds/wrong.mp3"></audio>
+  <audio id="finish-sound" src="assets/sounds/finish.mp3"></audio>
+
+  <script src="script.js"></script>
+</body>
+</html>
